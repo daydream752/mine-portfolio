@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
+import { BFooter } from "./b-footer";
 import styles from "./page.module.css";
 
 type Item = {
@@ -91,7 +92,7 @@ export default function BPage() {
 
   return (
     <main className={styles.page}>
-      <div className={styles.container}>
+      <div className={`${styles.container} ${styles.mainGrow}`}>
         <section className={styles.hero}>
           <h1>Dream Closet</h1>
           <p>의상 쇼핑몰 샘플 페이지</p>
@@ -163,6 +164,8 @@ export default function BPage() {
           </Link>
         </p>
       </div>
+
+      <BFooter />
 
       {openLogin && (
         <div className={styles.modalOverlay} onClick={() => setOpenLogin(false)}>

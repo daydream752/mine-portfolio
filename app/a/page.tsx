@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AFooter } from "./a-footer";
 import styles from "./page.module.css";
 
 type Lang = "kor" | "eng";
@@ -91,6 +92,7 @@ export default async function APage({ searchParams }: Props) {
 
   return (
     <main className={styles.page}>
+      <div className={styles.contentWrap}>
       <header className={styles.topbar}>
         <div className={styles.topInner}>
           <strong className={styles.brand}>
@@ -195,6 +197,9 @@ export default async function APage({ searchParams }: Props) {
           <Link href="/">{tx.back}</Link>
         </p>
       </div>
+      </div>
+
+      <AFooter lang={lang} />
     </main>
   );
 }
