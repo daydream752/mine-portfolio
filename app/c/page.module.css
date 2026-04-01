@@ -1,0 +1,22 @@
+.page {
+  min-height: 100vh;
+  background: #f6f4fa;
+  color: #312944;
+  padding: 28px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid #dad2ec;
+  border-radius: 10px;
+  background: #fcfbff;
+  padding: 16px;
+}
+
+.link {
+  color: #5b3f8f;
+}

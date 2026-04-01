@@ -1,0 +1,42 @@
+.page {
+  min-height: 100vh;
+  background: #f8f5f1;
+  color: #2f2a24;
+  padding: 28px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 8px;
+}
+
+.desc {
+  margin: 0 0 18px;
+  color: #655a4f;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.cardLink {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px;
+  border: 1px solid #ddd3c8;
+  border-radius: 10px;
+  background: #fffdfa;
+  color: #2f2a24;
+}
+
+.cardLink:hover {
+  background: #fff8ef;
+}
