@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCConfig, parseMenuOrderFromQuery } from "@/lib/c-config";
+import { recordOrderIfNew } from "@/lib/c-orders";
 import { confirmTossPayment, getTossPayment } from "@/lib/toss-server";
 import { parseSeatParam } from "../../../seats";
 import styles from "../page.module.css";
@@ -94,6 +95,22 @@ export default async function CPaymentSuccessPage({ params, searchParams }: Prop
 
   const method = typeof payment.method === "string" ? payment.method : "—";
   const approved = typeof payment.approvedAt === "string" ? payment.approvedAt : null;
+
+  const summary = lineItems.map((i) => `${i.name}×${i.quantity}`).join(", ");
+  try {
+    await recordOrderIfNew({
+      paymentKey,
+      tossOrderId: orderId,
+      seat: seatNum,
+      itemsRaw,
+      summary,
+      amount,
+      method,
+      approvedAt: approved,
+    });
+  } catch {
+    /* 저장 실패해도 결제 완료 화면은 유지 */
+  }
 
   return (
     <main className={styles.page}>

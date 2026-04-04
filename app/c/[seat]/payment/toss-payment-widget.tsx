@@ -59,7 +59,7 @@ export function TossPaymentWidget({ seat, total, orderName, itemsQuery }: Props)
       setError(null);
       setReady(false);
       try {
-        /* Strict Mode 재마운트 등으로 약관 위젯이 남아 있으면 "하나의 약관 위젯만" 오류가 납니다. */
+        /* 이전 인스턴스 제거 — 결제수단/약관 위젯은 전역에서 하나만 허용 */
         await safeDestroyAgreement(agreementWidgetRef.current);
         agreementWidgetRef.current = null;
         await safeDestroyPaymentMethods(paymentMethodsWidgetRef.current);
@@ -67,18 +67,33 @@ export function TossPaymentWidget({ seat, total, orderName, itemsQuery }: Props)
         widgetsRef.current = null;
 
         const tossPayments = await loadTossPayments(clientKey);
+        if (cancelled || runId !== initKeyRef.current) return;
+
         const widgets = tossPayments.widgets({ customerKey: ANONYMOUS });
         await widgets.setAmount({ currency: "KRW", value: totalRef.current });
-        /* 동시 렌더보다 순차 렌더가 위젯 전역 상태와 맞물리기 쉽습니다. */
-        paymentMethodsWidgetRef.current = await widgets.renderPaymentMethods({
+        if (cancelled || runId !== initKeyRef.current) return;
+
+        const pmw = await widgets.renderPaymentMethods({
           selector: "#c-payment-method",
           variantKey: "DEFAULT",
         });
-        agreementWidgetRef.current = await widgets.renderAgreement({
+        if (cancelled || runId !== initKeyRef.current) {
+          await safeDestroyPaymentMethods(pmw);
+          return;
+        }
+        paymentMethodsWidgetRef.current = pmw;
+
+        const aw = await widgets.renderAgreement({
           selector: "#c-payment-agreement",
           variantKey: "AGREEMENT",
         });
-        if (cancelled || runId !== initKeyRef.current) return;
+        if (cancelled || runId !== initKeyRef.current) {
+          await safeDestroyAgreement(aw);
+          await safeDestroyPaymentMethods(pmw);
+          paymentMethodsWidgetRef.current = null;
+          return;
+        }
+        agreementWidgetRef.current = aw;
         widgetsRef.current = widgets;
         setReady(true);
       } catch (e) {

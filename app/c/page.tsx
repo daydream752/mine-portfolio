@@ -16,6 +16,9 @@ export default async function CPage() {
             <p className={styles.subtitle}>원하는 좌석을 선택하세요.</p>
           </div>
           <div className={styles.headerLinks}>
+            <Link href="/c/admin/orders" className={styles.backLink}>
+              주문 내역
+            </Link>
             <Link href="/c/admin" className={styles.backLink}>
               좌석·메뉴 관리
             </Link>

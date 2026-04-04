@@ -1,0 +1,16 @@
+[
+  {
+    "id": "acc927f7-8b86-4463-8659-4ba9bcf70c64",
+    "paymentKey": "tgen_20260404175528x4tF5",
+    "tossOrderId": "c-seat3-bc146c9d-fdfd-4d03-8090-8f8090b7f0e6",
+    "seat": 3,
+    "itemsRaw": "set-a:1",
+    "summary": "세트 A×1",
+    "amount": 12000,
+    "method": "계좌이체",
+    "approvedAt": "2026-04-04T17:55:37+09:00",
+    "createdAt": "2026-04-04T08:55:37.707Z",
+    "status": "completed",
+    "completedAt": "2026-04-04T08:55:42.762Z"
+  }
+]

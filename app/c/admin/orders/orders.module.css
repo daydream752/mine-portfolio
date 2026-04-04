@@ -1,0 +1,136 @@
+.panel {
+  border: 1px solid #dad2ec;
+  border-radius: 12px;
+  background: #fcfbff;
+  padding: 22px;
+  box-shadow: 0 1px 0 rgba(49, 41, 68, 0.06);
+}
+
+.hint {
+  margin: 0;
+  color: #6b5a86;
+  font-size: 0.95rem;
+}
+
+.error {
+  margin: 0 0 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff5f5;
+  border: 1px solid #f5c6cb;
+  color: #9b2c2c;
+  font-size: 0.9rem;
+}
+
+.empty {
+  margin: 16px 0 0;
+  color: #6b5a86;
+  font-size: 0.95rem;
+}
+
+.toolbar {
+  margin-bottom: 16px;
+}
+
+.secondaryBtn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #c4b6e0;
+  background: #fff;
+  color: #5b3f8f;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondaryBtn:hover {
+  background: #f5f2fc;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e8e2f4;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.table th,
+.table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ebe4f7;
+  vertical-align: top;
+}
+
+.table th {
+  background: #f0ebfb;
+  font-weight: 700;
+  color: #4a3a6b;
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.rowDone {
+  opacity: 0.88;
+}
+
+.summaryCell {
+  max-width: 280px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.badgePending {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.badgeDone {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.completeBtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #5b3f8f;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.completeBtn:hover:not(:disabled) {
+  background: #4a3478;
+}
+
+.completeBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.doneMeta {
+  font-size: 0.78rem;
+  color: #6b5a86;
+  white-space: nowrap;
+}

@@ -1,19 +1,19 @@
 import Link from "next/link";
-import { AdminClient } from "./admin-client";
-import styles from "./page.module.css";
+import { OrdersClient } from "./orders-client";
+import styles from "../page.module.css";
 
-export default function CAdminPage() {
+export default function CAdminOrdersPage() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
         <header className={styles.header}>
           <div>
-            <h1 className={styles.title}>C 구역 설정</h1>
-            <p className={styles.subtitle}>좌석 개수와 메뉴 목록을 변경할 수 있습니다.</p>
+            <h1 className={styles.title}>주문 내역</h1>
+            <p className={styles.subtitle}>결제가 완료된 주문이 여기에 쌓입니다. 조리·서빙 후 완료 처리하세요.</p>
           </div>
           <div className={styles.headerLinks}>
-            <Link href="/c/admin/orders" className={styles.backLink}>
-              주문 내역
+            <Link href="/c/admin" className={styles.backLink}>
+              메뉴·좌석 설정
             </Link>
             <Link href="/c" className={styles.backLink}>
               테이블 구매로
@@ -23,7 +23,7 @@ export default function CAdminPage() {
             </Link>
           </div>
         </header>
-        <AdminClient />
+        <OrdersClient />
       </div>
     </main>
   );
