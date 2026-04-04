@@ -4,3 +4,6 @@ data/store.json
 .env
 .env.local
 npm-debug.log*
+
+public/c-menu-uploads/*
+!public/c-menu-uploads/.gitkeep

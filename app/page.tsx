@@ -14,6 +14,9 @@ export default function HomePage() {
           <Link href="/b" className={styles.cardLink}>
             B : 쇼핑 사이트트
           </Link>
+          <Link href="/c" className={styles.cardLink}>
+            C : 테이블 구매 시스템
+          </Link>
         </div>
       </div>
     </main>

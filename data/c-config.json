@@ -1,0 +1,25 @@
+{
+  "seatCount": 14,
+  "menuItems": [
+    {
+      "id": "set-a",
+      "name": "세트 A",
+      "price": 12000
+    },
+    {
+      "id": "set-b",
+      "name": "세트 B",
+      "price": 15000
+    },
+    {
+      "id": "single",
+      "name": "단품",
+      "price": 8000
+    },
+    {
+      "id": "side",
+      "name": "사이드",
+      "price": 4000
+    }
+  ]
+}

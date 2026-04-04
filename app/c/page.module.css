@@ -2,21 +2,136 @@
   min-height: 100vh;
   background: #f6f4fa;
   color: #312944;
-  padding: 28px;
+  padding: 28px 20px 40px;
 }
 
 .container {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.card {
-  border: 1px solid #dad2ec;
-  border-radius: 10px;
-  background: #fcfbff;
-  padding: 16px;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
-.link {
+.headerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #5c4d78;
+}
+
+.seatHeading {
+  margin: 0 0 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4a3a6b;
+  letter-spacing: -0.02em;
+}
+
+.seatHeadingNote {
+  font-weight: 500;
+  font-size: 0.88rem;
+  color: #7a6b94;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #dad2ec;
+  background: #fcfbff;
   color: #5b3f8f;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.backLink:hover {
+  background: #f0ebfb;
+  border-color: #c4b6e0;
+}
+
+.seatGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.seatGrid li {
+  margin: 0;
+}
+
+.seatCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 100px;
+  padding: 16px 12px;
+  border: 1px solid #dad2ec;
+  border-radius: 12px;
+  background: #fcfbff;
+  color: #312944;
+  cursor: pointer;
+  font: inherit;
+  box-shadow: 0 1px 0 rgba(49, 41, 68, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease,
+    background 0.15s ease;
+}
+
+.seatCardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.seatCard:hover {
+  background: #fff;
+  border-color: #b8a6d9;
+  box-shadow: 0 6px 20px rgba(91, 63, 143, 0.12);
+  transform: translateY(-2px);
+}
+
+.seatCard:focus-visible {
+  outline: 2px solid #5b3f8f;
+  outline-offset: 2px;
+}
+
+.seatLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7a6b94;
+}
+
+.seatNumber {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #4a3a6b;
 }
